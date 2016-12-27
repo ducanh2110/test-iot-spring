@@ -1,1 +1,1 @@
-web:    target/bin/app.bat
+web:    sh target/bin/app
