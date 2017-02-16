@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.model.Device;
 import com.example.service.DeviceService;
 
-@Controller
+@RestController
 @RequestMapping("/device")
 public class DeviceController {
 	@Autowired
@@ -67,6 +68,11 @@ public class DeviceController {
 	public ModelAndView home() {
 		ModelAndView mav = new ModelAndView("greeting");
 		return mav;
+	}
+	@RequestMapping(value = "/{id}/json", method = RequestMethod.GET)
+	public Device showDeviceJson(@PathVariable(value = "id", required = true) Integer id) {
+		Device device = deviceService.findById(id);
+		return device;
 	}
 
 }

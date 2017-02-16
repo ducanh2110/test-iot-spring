@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
 
+import org.apache.catalina.startup.ClassLoaderFactory.Repository;
 import org.springframework.stereotype.Service;
 
 import com.example.model.Device;
@@ -19,6 +20,7 @@ public class DeviceServiceImpl implements DeviceService {
 
 	@Override
 	public Device create(Device device) {
+	
 		return repository.save(device);
 	}
 

@@ -46,4 +46,17 @@ public class Device {
 	public void setBrightness(int brightness) {
 		this.brightness = brightness;
 	}
+
+	public Device(int id, String name, boolean turnLight, int brightness) {
+
+		this.id = id;
+		this.name = name;
+		this.turnLight = turnLight;
+		this.brightness = brightness;
+	}
+
+	public Device() {
+		super();
+	}
+	
 }
